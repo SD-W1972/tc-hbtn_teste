@@ -7,5 +7,6 @@ public class Pessoa {
          throw new IllegalArgumentException("Email inválido !");
     }
 
-
+    public Pessoa() {
+    }
 }
