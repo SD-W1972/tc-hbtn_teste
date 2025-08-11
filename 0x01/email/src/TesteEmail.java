@@ -11,5 +11,9 @@ public class TesteEmail {
         Assertions.assertTrue(b);
     }
 
+    @Test
+    public void testar_email_sem_arroba(){
+        Assertions.assertFalse(Pessoa.emailValid("email"));
+    }
 
 }
