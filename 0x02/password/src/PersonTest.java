@@ -26,11 +26,16 @@ public class PersonTest {
         Assertions.assertFalse(person.checkUser(username));
     }
 
-    @ParameterizedTest()
+    @ParameterizedTest(name = "Senha inválida: {0}")
     @ValueSource(strings = {"123456789", "#$%1234"})
     public void does_not_have_letters(String password){
         Assertions.assertFalse(person.checkPassword(password));
     }
 
+    @ParameterizedTest(name = "Senha inválida: {0}")
+    @ValueSource(strings = {"Abcabcdefgh@", "#hbtn@%tc"})
+    public void does_not_have_numbers(String password){
+        Assertions.assertFalse(person.checkPassword(password));
+    }
 }
 
