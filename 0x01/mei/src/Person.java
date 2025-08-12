@@ -9,6 +9,10 @@ public class Person {
     publicServer;
     private float salary;
 
+    public Person(){
+
+    }
+
     public Person(String name, String surname, Date birthDate, boolean anotherCompanyOwner, boolean pensioner, boolean publicServer, float salary) {
         this.name = name;
         this.surname = surname;
