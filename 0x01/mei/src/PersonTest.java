@@ -33,6 +33,14 @@ public class PersonTest {
         person.setPublicServer(false);
         person.setPensioner(false);
         person.setAnotherCompanyOwner(false);
+        Assertions.assertTrue(person.isMEI());
+    }
+
+    @Test
+    public void person_is_not_MEI(){
+        person.setPublicServer(true);
         Assertions.assertFalse(person.isMEI());
     }
+
+
 }
