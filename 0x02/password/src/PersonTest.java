@@ -21,7 +21,7 @@ public class PersonTest {
     }
 
     @ParameterizedTest(name = "Usuario invalido: {0}")
-    @ValueSource(strings = {"Paul#McCarney2", "NeilArms2"})
+    @ValueSource(strings = {"Paul#McCartney2", "Neil@Arms2"})
     public void check_user_not_valid(String username){
         Assertions.assertFalse(person.checkUser(username));
     }
@@ -36,6 +36,18 @@ public class PersonTest {
     @ValueSource(strings = {"Abcabcdefgh@", "#hbtn@%tc"})
     public void does_not_have_numbers(String password){
         Assertions.assertFalse(person.checkPassword(password));
+    }
+
+    @ParameterizedTest(name = "Senha inválida: {0}")
+    @ValueSource(strings = {"Abc@123", "12$@gbt"})
+    public void does_not_have_eight_chars(String password){
+        Assertions.assertFalse(person.checkPassword(password));
+    }
+
+    @ParameterizedTest(name = "Senha válida: {0}")
+    @ValueSource(strings ={"abC123456$", "Hbtn@1234", "Betty@1#2", "Hbtn@123"})
+    public void check_password_valid(String password){
+        Assertions.assertTrue(person.checkPassword(password));
     }
 }
 
