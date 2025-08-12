@@ -17,4 +17,9 @@ public class PersonTest {
 
     }
 
+
+    @Test
+    public void show_full_name(){
+        Assertions.assertEquals("Paul McCartney", person.fullName());
+    }
 }
