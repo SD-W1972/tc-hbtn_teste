@@ -17,9 +17,14 @@ public class PersonTest {
 
     }
 
-
     @Test
     public void show_full_name(){
         Assertions.assertEquals("Paul McCartney", person.fullName());
+    }
+
+    @Test
+    public void teste_calculateYearlySalary(){
+        person.setSalary(1200);
+        Assertions.assertEquals(14400, person.calculateYearlySalary());
     }
 }
