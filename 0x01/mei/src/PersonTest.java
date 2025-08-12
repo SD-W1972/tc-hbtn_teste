@@ -1,4 +1,20 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.Date;
+
 public class PersonTest {
-    public PersonTest() {
+    Person person = new Person();
+    @BeforeEach
+    public void setup(){
+
+        person.setName("Paul");
+        person.setSurname("McCartney");
+        person.setBirthDate(new Date(100, 0, 1));
+        person.setAnotherCompanyOwner(true);
+        person.setPublicServer(true);
+
     }
+
 }
