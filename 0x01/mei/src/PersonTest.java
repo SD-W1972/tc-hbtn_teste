@@ -27,4 +27,12 @@ public class PersonTest {
         person.setSalary(1200);
         Assertions.assertEquals(14400, person.calculateYearlySalary());
     }
+
+    @Test
+    public void person_is_MEI(){
+        person.setPublicServer(false);
+        person.setPensioner(false);
+        person.setAnotherCompanyOwner(false);
+        Assertions.assertFalse(person.isMEI());
+    }
 }
